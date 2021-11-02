@@ -1,4 +1,4 @@
-import {Request, Response} from "express";
+import {json, Request, Response} from "express";
 import { connect } from "../database";
 const path = require("path");
 
@@ -9,14 +9,11 @@ export async function loginPage(req: Request, res: Response){
         console.log("Params: ",req.body);
         
         const conn = await connect();
-        const accounts = await conn.query("select idPromotor from promotor where usuario = ? and contrasena = ?",
-        [username, password]);
+        const accounts = await conn.query("call validate_login(?,?)",[username, password]);
+        const hasValue = JSON.stringify(accounts);        
         
-        if (accounts[0].toString().length > 0){
-            return res.send("true")
-        } else {
-            return res.send("false")   
-        }
+        const validation = (hasValue.indexOf("idPromotor") == 5) ? "true" : "false";
+        return res.send(validation);
     } catch (e) {
         console.log(e);
     }
