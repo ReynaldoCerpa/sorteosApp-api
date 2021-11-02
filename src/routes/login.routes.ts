@@ -3,6 +3,6 @@ const router = Router();
 
 import * as login from "../controllers/login.controller"
 router.route("/login")
-    .get(login.loginPage)
+    .post(login.loginPage)
 
 export default router;
