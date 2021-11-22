@@ -12,3 +12,12 @@ export async function getPromotores(req: Request, res: Response): Promise<Respon
         console.log(e)
     }
 }
+
+export async function test(req: Request, res: Response): Promise<Response | void> {
+    try {
+         return res.send("funciona");
+    }
+    catch (e) {
+        console.log(e)
+    }
+}

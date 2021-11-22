@@ -10,6 +10,8 @@ import bodyParser from "body-parser";
 import loginRoute from "./routes/login.routes"
 import indexRoute from "./routes/index.routes"
 import registerRoute from "./routes/register.routes"
+import carterasRoute from "./routes/carteras.routes"
+import boletosRoute from "./routes/boletos.routes"
 
 export class App{
     private app: Application;
@@ -33,6 +35,8 @@ export class App{
         this.app.use(loginRoute);
         this.app.use(indexRoute);
         this.app.use(registerRoute);
+        this.app.use(carterasRoute);
+        this.app.use(boletosRoute);
     }
 
     settings(){
