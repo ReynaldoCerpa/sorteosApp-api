@@ -3,7 +3,7 @@ const router = Router();
 
 import * as index from "../controllers/boletos.controller"
 router.route("/boletos")
-    .get(index.getBoleto)
+    .post(index.getBoleto)
 
     
 export default router;
