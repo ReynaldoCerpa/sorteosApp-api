@@ -11,7 +11,7 @@ export async function getBoletoEspecifico(req: Request, res: Response){
         console.log("Params: ", req.body);
         
         const conn = await connect();
-        const posts = await conn.query('SELECT concat(day(b.fechaEntregaComprador), "/", month(b.fechaEntregaComprador), "/", year(b.fechaEntregaComprador)) as fecha, b.vendido, concat(c.nombre," ", c.apellido1," ", c.apellido2) as nombre, concat(c.calle, " #", c.numInt, "-", c.numExt, " ", c.colonia, ", ", c.ciudad, ", CP.",c.codigoPostal) as direccion FROM boleto b inner join comprador c on c.idComprador = b.idComprador where b.numBoleto = ?',[id]); 
+        const posts = await conn.query('SELECT concat(day(b.fechaEntregaComprador), "/", month(b.fechaEntregaComprador), "/", year(b.fechaEntregaComprador)) as fecha, b.vendido, concat(c.nombre," ", c.apellido1," ", c.apellido2) as nombre, concat(c.calle, " #", c.numInt, "-", c.numExt, " ", c.colonia, ", ", c.ciudad, ", CP.",c.codigoPostal) as direccion FROM boleto b inner join comprador c on c.numBoleto = b.numBoleto where b.numBoleto = ?',[id]); 
 
         return res.json(posts[0]);
     } catch (e) {
