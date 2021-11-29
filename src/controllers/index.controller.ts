@@ -12,3 +12,12 @@ export async function getPromotores(req: Request, res: Response): Promise<Respon
         console.log(e)
     }
 }
+
+export async function testConnection(req: Request, res: Response): Promise<Response | void> {
+    try {
+        return res.send("Connected to api")
+    }
+    catch (e) {
+        console.log(e)
+    }
+}
