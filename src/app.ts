@@ -13,6 +13,7 @@ import registerRoute from "./routes/register.routes"
 import carterasRoute from "./routes/carteras.routes"
 import boletosRoute from "./routes/boletos.routes"
 import boletoespecificoRoute from "./routes/boleto_especifico.routes"
+import boleto_novendidosRoute from "./routes/boletos_novendidos.routes"
 
 export class App{
     private app: Application;
@@ -39,6 +40,7 @@ export class App{
         this.app.use(carterasRoute);
         this.app.use(boletosRoute);
         this.app.use(boletoespecificoRoute);
+        this.app.use(boleto_novendidosRoute);
     }
 
     settings(){

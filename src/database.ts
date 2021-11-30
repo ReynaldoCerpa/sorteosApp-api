@@ -5,7 +5,7 @@ export async function connect(){
         host: "localhost",
         user: "root",
         password: "165998",
-        database: "cetyssorteos",
+        database: "cetyssorteoscopia",
         connectionLimit: 10
     });
 

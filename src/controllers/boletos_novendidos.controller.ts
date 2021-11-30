@@ -2,7 +2,7 @@ import {Request, Response} from "express";
 import { connect } from '../database'
 const path = require("path");
 
-export async function getBoletoEspecifico(req: Request, res: Response){
+export async function getBoletosNoVendidos(req: Request, res: Response){
     try{
 
         var id = req.body.numBoleto;
