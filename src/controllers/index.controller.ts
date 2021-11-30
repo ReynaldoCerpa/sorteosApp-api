@@ -13,9 +13,9 @@ export async function getPromotores(req: Request, res: Response): Promise<Respon
     }
 }
 
-export async function test(req: Request, res: Response): Promise<Response | void> {
+export async function testConnection(req: Request, res: Response): Promise<Response | void> {
     try {
-         return res.send("funciona");
+        return res.send("Connected to api")
     }
     catch (e) {
         console.log(e)

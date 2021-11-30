@@ -12,7 +12,7 @@ export async function loginPage(req: Request, res: Response){
         const accounts = await conn.query("call validate_login(?,?)",[username, password]);
         const hasValue = JSON.stringify(accounts);        
         
-        const validation = (hasValue.indexOf("idColaborador") == 5) ? "true" : "false";
+        const validation = (hasValue.indexOf("idPromotor") == 5) ? "true" : "false";
         return res.send(validation);
     } catch (e) {
         console.log(e);

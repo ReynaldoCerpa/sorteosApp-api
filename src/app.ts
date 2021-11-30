@@ -5,15 +5,12 @@ import morgan from "morgan";
 import helmet from "helmet";
 import compression from "compression"
 import bodyParser from "body-parser";
+import cors from "cors";
 
 //Routes
 import loginRoute from "./routes/login.routes"
 import indexRoute from "./routes/index.routes"
 import registerRoute from "./routes/register.routes"
-import carterasRoute from "./routes/carteras.routes"
-import boletosRoute from "./routes/boletos.routes"
-import boletoespecificoRoute from "./routes/boleto_especifico.routes"
-import boleto_novendidosRoute from "./routes/boletos_novendidos.routes"
 
 export class App{
     private app: Application;
@@ -31,20 +28,17 @@ export class App{
         this.app.use(bodyParser.json())
         this.app.use(helmet())
         this.app.use(compression())
+        this.app.use(cors())
     }
 
     routes(){
         this.app.use(loginRoute);
         this.app.use(indexRoute);
         this.app.use(registerRoute);
-        this.app.use(carterasRoute);
-        this.app.use(boletosRoute);
-        this.app.use(boletoespecificoRoute);
-        this.app.use(boleto_novendidosRoute);
     }
 
     settings(){
-        this.app.set("port", this.port || process.env.PORT || 3000);
+        this.app.set("port", this.port || process.env.PORT || 4000);
     }
 
     async listen(){
