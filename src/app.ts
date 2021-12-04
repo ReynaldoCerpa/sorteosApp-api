@@ -11,6 +11,19 @@ import cors from "cors";
 import loginRoute from "./routes/login.routes"
 import indexRoute from "./routes/index.routes"
 import registerRoute from "./routes/register.routes"
+import boletoEspecificoRoute from "./routes/boleto_especifico.routes"
+import boletosRoute from "./routes/boletos.routes"
+import carterasRout from "./routes/carteras.routes"
+import boletos_novendidosRoute from "./routes/boletos_novendidos.routes"
+import registerCompradorRoute from "./routes/registerComprador.route"
+import compradoresRoute from "./routes/compradores.route"
+import infocompradorRoute from "./routes/infoComprador.route"
+import asignarBoletoRoute from "./routes/asignarBoletoComprador.route"
+import boletosvendidosRoute from "./routes/boletosVendidos.route"
+
+
+
+
 
 export class App{
     private app: Application;
@@ -35,10 +48,23 @@ export class App{
         this.app.use(loginRoute);
         this.app.use(indexRoute);
         this.app.use(registerRoute);
+        this.app.use(boletos_novendidosRoute);
+        this.app.use(boletoEspecificoRoute);
+        this.app.use(boletosRoute);
+        this.app.use(carterasRout);
+        this.app.use(registerCompradorRoute);
+        this.app.use(compradoresRoute);
+        this.app.use(infocompradorRoute);
+        this.app.use(asignarBoletoRoute);
+        this.app.use(boletosvendidosRoute);
+
+
+
+
     }
 
     settings(){
-        this.app.set("port", this.port || process.env.PORT || 4000);
+        this.app.set("port", this.port || process.env.PORT || 3000);
     }
 
     async listen(){

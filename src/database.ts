@@ -4,8 +4,8 @@ export async function connect(){
     const connection = await createPool({
         host: "localhost",
         user: "root",
-        password: "pass",
-        database: "cetyssorteos",
+        password: "165998",
+        database: "cetyssorteoscopia",
         connectionLimit: 10
     });
 
