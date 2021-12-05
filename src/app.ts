@@ -11,6 +11,8 @@ import cors from "cors";
 import loginRoute from "./routes/login.routes"
 import indexRoute from "./routes/index.routes"
 import registerRoute from "./routes/register.routes"
+import colaboradoresroute from "./routes/colaboradores.routes"
+import carterasRoute from "./routes/carteras.routes"
 
 export class App{
     private app: Application;
@@ -35,6 +37,8 @@ export class App{
         this.app.use(loginRoute);
         this.app.use(indexRoute);
         this.app.use(registerRoute);
+        this.app.use(colaboradoresroute);
+        this.app.use(carterasRoute);
     }
 
     settings(){
