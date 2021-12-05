@@ -20,6 +20,8 @@ import compradoresRoute from "./routes/compradores.route"
 import infocompradorRoute from "./routes/infoComprador.route"
 import asignarBoletoRoute from "./routes/asignarBoletoComprador.route"
 import boletosvendidosRoute from "./routes/boletosVendidos.route"
+import totalabonoRoute from "./routes/totalabono.routes"
+
 
 
 
@@ -57,10 +59,7 @@ export class App{
         this.app.use(infocompradorRoute);
         this.app.use(asignarBoletoRoute);
         this.app.use(boletosvendidosRoute);
-
-
-
-
+        this.app.use(totalabonoRoute);
     }
 
     settings(){
