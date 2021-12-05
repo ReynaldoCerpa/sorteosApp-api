@@ -8,7 +8,7 @@ export async function getTotalAbono(req, res ) {
         console.log("Params: ", req.body);
 
             const conn = await connect();
-            const posts = await conn.query('select sum(cantidad) as cantidad from abono where numBoleto = ?', [id]);
+            const posts = await conn.query('select 550-sum(cantidad) as cantidad from abono where numBoleto = ?', [id]);
           
             console.log(posts[0]);
             return res.json(posts[0]);

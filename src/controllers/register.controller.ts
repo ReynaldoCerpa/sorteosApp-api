@@ -5,21 +5,29 @@ const path = require("path");
 export async function registerUser(req: Request, res: Response){
     try{
         let validRegister = false;
-        const nombre = req.body.nombreCompleto;
-        const direccion = req.body.direccion;
+        const nombre = req.body.nombre;
+        const apellido1 = req.body.apellido1;
+        const apellido2 = req.body.apellido2;
+        const calle = req.body.calle;
+        const numint = req.body.numint;
+        const numext = req.body.numext;
+        const colonia = req.body.colonia;
+        const codigoPostal = req.body.codigoPostal;
+        const ciudad = req.body.ciudad;
+        const correo = req.body.correo;
         const telefono = req.body.telefono;
-        const email = req.body.email;
-        const usuario = req.body.usuario;
-        const contrasena = req.body.password;
+        const nombreusuario = req.body.nombreusuario;
+        const contrasena = req.body.contrasena;
+        
         console.log("Params: ",req.body);
         
         //"call validate_login(?,?,?,?,?,?)",[nombre, direccion, telefono, email, usuario, contrasena]
 
         const conn = await connect();
-        const data = await conn.query("select * from promotor where usuario = ?",usuario);
+        const data = await conn.query("select * from colaborador where nombreusuario = ?",nombreusuario);
         if(data[0].toString() == ""){
             validRegister = true;
-            await conn.query("insert into promotor values (?,?,?,?,?,?)",[nombre, direccion, telefono, email, usuario, contrasena]);
+            await conn.query("insert into colaborador values(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, ?)",[nombre, apellido1, apellido2, telefono, calle, numint, numext, colonia, codigoPostal, ciudad, contrasena, nombreusuario, correo]);
         }
 
         return res.send(validRegister);
