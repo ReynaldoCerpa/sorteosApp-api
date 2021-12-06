@@ -9,7 +9,9 @@ export async function getinfoLogin(req: Request, res: Response): Promise<Respons
 
             const conn = await connect();
             const posts = await conn.query('select nombre, idColaborador from colaborador where nombreusuario = ?', [id]);
-    
+
+            console.log(posts[0]);
+            
             return res.json(posts[0]);
 
        

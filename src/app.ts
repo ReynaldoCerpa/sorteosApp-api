@@ -24,7 +24,7 @@ import totalabonoRoute from "./routes/totalabono.routes"
 import abonosRoute from "./routes/abonos.route"
 import logininfoRoute from "./routes/logininfo.routes"
 import agregarAbonoRoute from "./routes/agregarAbono.route"
-import cambiarContrasenaColaboradorRoute from "./routes/cambiarCOntrasenaColaborador.route"
+import cambiarContrasenaColaboradorRoute from "./routes/cambiarContrasenaColaborador.route"
 import recuperarContrasenaRoute from "./routes/recuperarContrasena.route";
 import homenombreRoute from "./routes/homenombre.route";
 
