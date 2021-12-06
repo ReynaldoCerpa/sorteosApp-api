@@ -13,6 +13,7 @@ import indexRoute from "./routes/index.routes"
 import registerRoute from "./routes/register.routes"
 import colaboradoresroute from "./routes/colaboradores.routes"
 import carterasRoute from "./routes/carteras.routes"
+import boletosRoute from "./routes/boletos.routes"
 
 export class App{
     private app: Application;
@@ -39,6 +40,8 @@ export class App{
         this.app.use(registerRoute);
         this.app.use(colaboradoresroute);
         this.app.use(carterasRoute);
+        this.app.use(boletosRoute);
+
     }
 
     settings(){

@@ -11,5 +11,13 @@ router.route("/allCarteras")
 router.route("/adeudoCarteras")
     .get(index.getAdeudosCarteras)
 
+router.route("/insertarCarteras")
+    .post(index.insertarCarteras)
+
+router.route("/abonoCartera")
+    .post(index.abonoCartera)
+
+router.route("/devolverCartera")
+    .post(index.devolverCartera)
     
 export default router;

@@ -19,6 +19,24 @@ export async function getBoleto(req: Request, res: Response): Promise<Response |
     }
 }
 
+export async function getAllBoletos(req: Request, res: Response): Promise<Response | void> {
+    try {
+        var id = req.body.idCartera;
+        console.log("Params: ", req.body);
+
+            const conn = await connect();
+            const posts = await conn.query('call carteraBoletos(?)',[id]);
+    
+            return res.json(posts[0]);
+
+       
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+
+
 
 /*import {Request, Response} from "express";
 import { connect } from '../database'
