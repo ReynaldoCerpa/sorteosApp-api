@@ -23,6 +23,10 @@ import boletosvendidosRoute from "./routes/boletosVendidos.route"
 import totalabonoRoute from "./routes/totalabono.routes"
 import abonosRoute from "./routes/abonos.route"
 import logininfoRoute from "./routes/logininfo.routes"
+import agregarAbonoRoute from "./routes/agregarAbono.route"
+import cambiarContrasenaColaboradorRoute from "./routes/cambiarCOntrasenaColaborador.route"
+import recuperarContrasenaRoute from "./routes/recuperarContrasena.route";
+import homenombreRoute from "./routes/homenombre.route";
 
 
 
@@ -66,6 +70,13 @@ export class App{
         this.app.use(totalabonoRoute);
         this.app.use(abonosRoute);
         this.app.use(logininfoRoute);
+        this.app.use(agregarAbonoRoute);
+        this.app.use(cambiarContrasenaColaboradorRoute);
+        this.app.use(recuperarContrasenaRoute);
+        this.app.use(homenombreRoute);
+
+
+
 
 
     }

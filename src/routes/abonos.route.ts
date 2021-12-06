@@ -3,7 +3,7 @@ const router = Router();
 
 import * as index from "../controllers/abonos.controller"
 router.route("/abonos")
-    .post(index.getAbonos)
+    .post(index.getAbono)
 
     
 export default router;
